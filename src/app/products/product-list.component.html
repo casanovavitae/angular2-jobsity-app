@@ -1,0 +1,11 @@
+<h1>Product List</h1>
+<div><input type='text' [(ngModel)]='filterList'/></div>
+<h3>Filter List: {{filterList}}</h3>
+<button (click)='toggleImg()'>{{showImg ? 'hide': 'show'}}</button>
+<table *ngIf='products'>
+  <tr *ngFor='let product of products | productFilter:filterList'>
+    <th><img *ngIf='showImg' [src]='product.url' [style.width.px]='150'/></th>
+    <th>{{product.productName}}</th>
+    <th>{{product.price | currency:'USD':true:'1.2-2'}}</th> 
+  </tr>
+</table>
