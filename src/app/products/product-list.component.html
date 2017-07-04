@@ -1,4 +1,6 @@
-<h1>Product List</h1>
+<h1>{{title}}</h1>
+  <i class="fa fa-american-sign-language-interpreting fa-5x" aria-hidden="true"> </i> 
+  <i class="fa fa-american-sign-language-interpreting fa-5x" aria-hidden="true"> </i> 
 <div><input type='text' [(ngModel)]='filterList'/></div>
 <h3>Filter List: {{filterList}}</h3>
 <button (click)='toggleImg()'>{{showImg ? 'hide': 'show'}}</button>
@@ -7,5 +9,6 @@
     <th><img *ngIf='showImg' [src]='product.url' [style.width.px]='150'/></th>
     <th>{{product.productName}}</th>
     <th>{{product.price | currency:'USD':true:'1.2-2'}}</th> 
+    <th><ai-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'></ai-star></th>
   </tr>
 </table>
