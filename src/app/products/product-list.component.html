@@ -7,7 +7,7 @@
 <table *ngIf='products'>
   <tr *ngFor='let product of products | productFilter:filterList'>
     <th><img *ngIf='showImg' [src]='product.url' [style.width.px]='150'/></th>
-    <th>{{product.productName}}</th>
+    <th><a [routerLink]="['/products',product.productId]"> {{product.productName}}</a></th>
     <th>{{product.price | currency:'USD':true:'1.2-2'}}</th> 
     <th><ai-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'></ai-star></th>
   </tr>
