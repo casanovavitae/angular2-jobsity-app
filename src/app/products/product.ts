@@ -2,8 +2,8 @@ export interface  IProduct{
     productId: number;
     productName: string;
     releaseData: string;
-    price: number;
     description: string;
+    price: number;
     starRating:number;
     imageUrl:string;
 }
